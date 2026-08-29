@@ -89,7 +89,7 @@ export const LandingPage = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-emerald-700/50 bg-stone-900 group">
               <img
-                src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1000&q=80"
+                src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=80"
                 alt="Indian Farm Tractor"
                 className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
               />

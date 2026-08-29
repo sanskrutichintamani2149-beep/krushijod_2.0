@@ -8,12 +8,12 @@ export const mockEquipment = [
     location: "Nashik, Maharashtra",
     holderName: "Vijay Pawar",
     holderPhone: "+91 98220 12345",
-    image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1530267981375-f0de937f5f13?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1464226184884-fa52add7d0b7?auto=format&fit=crop&w=800&q=80"
     ],
-    videoThumbnail: "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80",
+    videoThumbnail: "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80",
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     rtoInfo: {
       regNumber: "MH 15 AB 4821",
@@ -43,11 +43,11 @@ export const mockEquipment = [
     location: "Kopargaon, Maharashtra",
     holderName: "Ganesh Kadam",
     holderPhone: "+91 97631 88900",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80"
     ],
-    videoThumbnail: "https://images.unsplash.com/photo-1595838787756-11f8c85779c1?auto=format&fit=crop&w=800&q=80",
+    videoThumbnail: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     rtoInfo: {
       regNumber: "MH 17 C 9032 (Implement)",
@@ -76,11 +76,11 @@ export const mockEquipment = [
     location: "Pune, Maharashtra",
     holderName: "Mahesh Deshmukh",
     holderPhone: "+91 94223 55678",
-    image: "https://images.unsplash.com/photo-1595838787756-11f8c85779c1?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=800&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1595838787756-11f8c85779c1?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=800&q=80"
     ],
-    videoThumbnail: "https://images.unsplash.com/photo-1530267981375-f0de937f5f13?auto=format&fit=crop&w=800&q=80",
+    videoThumbnail: "https://images.unsplash.com/photo-1464226184884-fa52add7d0b7?auto=format&fit=crop&w=800&q=80",
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     rtoInfo: {
       regNumber: "MH 12 FX 3390",
@@ -109,11 +109,11 @@ export const mockEquipment = [
     location: "Sangamner, Maharashtra",
     holderName: "Sanjay Salunke",
     holderPhone: "+91 98904 77123",
-    image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=80"
     ],
-    videoThumbnail: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+    videoThumbnail: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     rtoInfo: {
       regNumber: "MH 17 BH 7721",
@@ -142,11 +142,11 @@ export const mockEquipment = [
     location: "Satara, Maharashtra",
     holderName: "Anand Shinde",
     holderPhone: "+91 98231 44556",
-    image: "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=800&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=800&q=80"
     ],
-    videoThumbnail: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80",
+    videoThumbnail: "https://images.unsplash.com/photo-1464226184884-fa52add7d0b7?auto=format&fit=crop&w=800&q=80",
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     rtoInfo: {
       regNumber: "MH 11 DD 1102",
@@ -177,7 +177,7 @@ export const mockLabour = [
     phone: "+91 98812 34567",
     experienceYears: 7,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
     bio: "Experienced in weeding, crop harvesting, canal irrigation management, and field preparation."
   },
   {
@@ -189,7 +189,7 @@ export const mockLabour = [
     phone: "+91 97654 32109",
     experienceYears: 10,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?auto=format&fit=crop&w=300&q=80",
+    image: "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=300&q=80",
     bio: "Specialist in manual onion nursery transplanting, wheat seed placement, and vegetable bed planting."
   },
   {
@@ -201,7 +201,7 @@ export const mockLabour = [
     phone: "+91 99221 88345",
     experienceYears: 8,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80",
     bio: "Skilled in manual wheat cutting, bundle stacking, thrashing management, and grain bagging."
   },
   {
@@ -213,7 +213,7 @@ export const mockLabour = [
     phone: "+91 98500 11987",
     experienceYears: 12,
     availability: "Available Now",
-    image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&q=80",
+    image: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=300&q=80",
     bio: "Licensed tractor driver and operator for heavy rotavators, seed drills, sprayers, and harvesters."
   }
 ];
@@ -229,7 +229,7 @@ export const mockNewDealers = [
     location: "Nashik Highway, Ahmednagar",
     status: "NEW FOR SALE",
     specs: "47 HP, 4-Cylinder, 12 Forward + 3 Reverse, 1700 kg Lift Capacity, 6 Years Warranty.",
-    image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "dlr-302",
@@ -241,7 +241,7 @@ export const mockNewDealers = [
     location: "Mumbai-Agra Road, Nashik",
     status: "NEW FOR SALE",
     specs: "55 HP CRDS Engine, 2000 kg Hydraulics, Dual Clutch, Hydrostatic Power Steering.",
-    image: "https://images.unsplash.com/photo-1530267981375-f0de937f5f13?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80"
   },
   {
     id: "dlr-303",
@@ -253,7 +253,7 @@ export const mockNewDealers = [
     location: "Hadapsar, Pune",
     status: "NEW FOR SALE",
     specs: "18 HP Mini Tractor, Ultra-narrow width for grape orchards and sugarcane inter-cultivation.",
-    image: "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=800&q=80"
   }
 ];
 

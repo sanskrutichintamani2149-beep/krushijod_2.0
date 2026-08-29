@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { RazorpayModal } from './components/RazorpayModal';
 import { LoginModal } from './components/LoginModal';
 import { EquipmentComparisonModal } from './components/EquipmentComparisonModal';
+import { AIFactChecker } from './components/AIFactChecker';
 
 import { LandingPage } from './pages/LandingPage';
 import { FarmerDashboard } from './pages/FarmerDashboard';
@@ -14,7 +15,7 @@ import { DealerPage } from './pages/DealerPage';
 import { AdminDashboard } from './pages/AdminDashboard';
 
 const MainContent = () => {
-  const { activeTab, userRole } = useApp();
+  const { activeTab, userRole, isAdminAccessGranted, isDataBlackoutActive, recoveryStatus, isRecoveryDataActive } = useApp();
 
   const renderCurrentView = () => {
     switch (activeTab) {
@@ -31,10 +32,10 @@ const MainContent = () => {
       case 'bookings':
       case 'location':
       case 'chat':
+        if (userRole === 'Farmer') return <FarmerDashboard />;
         if (userRole === 'Labour') return <LabourDashboard />;
         if (userRole === 'EquipmentHolder') return <EquipmentHolderDashboard />;
         if (userRole === 'Dealer') return <DealerPage />;
-        if (userRole === 'Admin') return <AdminDashboard />;
         return <FarmerDashboard />;
 
       case 'labour':
@@ -49,6 +50,12 @@ const MainContent = () => {
         return <DealerPage />;
 
       case 'admin-dashboard':
+        if (!isAdminAccessGranted) {
+          if (userRole === 'Labour') return <LabourDashboard />;
+          if (userRole === 'EquipmentHolder') return <EquipmentHolderDashboard />;
+          if (userRole === 'Dealer') return <DealerPage />;
+          return <FarmerDashboard />;
+        }
         return <AdminDashboard />;
 
       default:
@@ -60,6 +67,12 @@ const MainContent = () => {
     <div className="min-h-screen flex flex-col justify-between bg-[#F4F7F4]">
       <div>
         <Navbar />
+        {isDataBlackoutActive && (
+          <div className="bg-amber-200 border-b border-amber-300 text-amber-950 text-center text-xs font-bold tracking-wide py-2 px-3 leading-relaxed">
+            DATA BLACKOUT ACTIVE — Offline mode enabled.<br />
+            Your data is safely preserved locally. No database records were deleted. {isRecoveryDataActive ? '(Recovery snapshot in use)' : ''} {recoveryStatus}
+          </div>
+        )}
         <main>
           {renderCurrentView()}
         </main>
@@ -71,6 +84,7 @@ const MainContent = () => {
       <EquipmentComparisonModal />
       <RazorpayModal />
       <LoginModal />
+      <AIFactChecker />
     </div>
   );
 };

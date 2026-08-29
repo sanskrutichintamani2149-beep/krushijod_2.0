@@ -3,11 +3,29 @@ import { useApp } from '../context/AppContext';
 import { Globe, User, ShieldCheck, Menu, X, ArrowRightLeft, Bell, Lock } from 'lucide-react';
 
 export const Navbar = () => {
-  const { lang, changeLanguage, t, userRole, setIsLoginModalOpen, activeTab, setActiveTab, userProfile } = useApp();
+  const { lang, changeLanguage, t, userRole, validateAdminPassword, isAdminAccessGranted, setIsLoginModalOpen, activeTab, setActiveTab, userProfile } = useApp();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const roleLabel = isAdminAccessGranted ? 'Admin' : userRole;
 
   const handleNavClick = (tab) => {
     setActiveTab(tab);
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleAdminAccessRequest = () => {
+    if (isAdminAccessGranted) {
+      setActiveTab('admin-dashboard');
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    const enteredPassword = window.prompt('Enter admin password');
+    if (!validateAdminPassword(enteredPassword)) {
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
+    setActiveTab('admin-dashboard');
     setIsMobileMenuOpen(false);
   };
 
@@ -71,9 +89,9 @@ export const Navbar = () => {
 
             {/* Admin Panel Direct Link */}
             <button
-              onClick={() => handleNavClick('admin-dashboard')}
+              onClick={handleAdminAccessRequest}
               className={`px-3 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-1 ${
-                activeTab === 'admin-dashboard'
+                activeTab === 'admin-dashboard' && isAdminAccessGranted
                   ? 'bg-amber-400 text-emerald-950 shadow'
                   : 'bg-amber-100/80 text-amber-900 hover:bg-amber-200/80'
               }`}
@@ -130,7 +148,7 @@ export const Navbar = () => {
                   {userProfile.name}
                 </span>
                 <span className="text-xs font-bold leading-tight flex items-center">
-                  {userRole}
+                  {roleLabel}
                   <ArrowRightLeft className="w-3 h-3 ml-1.5 opacity-80 group-hover:rotate-180 transition-transform" />
                 </span>
               </div>
@@ -171,7 +189,7 @@ export const Navbar = () => {
             <button onClick={() => handleNavClick('dashboard')} className="text-left px-3 py-2 text-xs font-bold text-gray-800 bg-gray-50 rounded-xl">{t.navEquipment}</button>
             <button onClick={() => handleNavClick('labour')} className="text-left px-3 py-2 text-xs font-bold text-gray-800 bg-gray-50 rounded-xl">{t.navLabour}</button>
             <button onClick={() => handleNavClick('dealer')} className="text-left px-3 py-2 text-xs font-bold text-gray-800 bg-gray-50 rounded-xl">{t.navNewEquipment}</button>
-            <button onClick={() => handleNavClick('admin-dashboard')} className="col-span-2 text-left px-3 py-2 text-xs font-bold text-emerald-950 bg-amber-200 rounded-xl">🛡️ Admin Panel</button>
+            <button onClick={handleAdminAccessRequest} className="col-span-2 text-left px-3 py-2 text-xs font-bold text-emerald-950 bg-amber-200 rounded-xl">🛡️ Admin Panel</button>
           </div>
 
           <button
@@ -182,7 +200,7 @@ export const Navbar = () => {
             className="w-full mt-2 flex items-center justify-center space-x-2 bg-[#1B4D3E] text-white py-2.5 rounded-xl text-xs font-bold shadow"
           >
             <User className="w-4 h-4" />
-            <span>{t.navLogin} ({userRole})</span>
+            <span>{t.navLogin} ({roleLabel})</span>
           </button>
         </div>
       )}

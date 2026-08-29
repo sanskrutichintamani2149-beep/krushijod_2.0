@@ -3,7 +3,15 @@ import { Users, ShieldCheck, Tractor, ShoppingBag, DollarSign, Check, X, AlertCi
 import { useApp } from '../context/AppContext';
 
 export const AdminDashboard = () => {
-  const { t } = useApp();
+  const {
+    t,
+    logoutAdmin,
+    isDataBlackoutActive,
+    recoveryStatus,
+    pendingSyncItems,
+    simulateDataBlackout,
+    restoreDataStore
+  } = useApp();
   const [activeAdminTab, setActiveAdminTab] = useState('overview');
 
   // Verification requests mock queue
@@ -63,7 +71,7 @@ export const AdminDashboard = () => {
             <h1 className="text-3xl font-extrabold mt-2">Krushiजोड Platform Administration</h1>
             <p className="text-emerald-100 text-sm mt-1">Manage user verifications, RTO compliance, machinery listings, and platform statistics.</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <button
               onClick={() => setActiveAdminTab('overview')}
               className={`px-4 py-2 text-xs font-bold rounded-xl transition ${
@@ -80,6 +88,50 @@ export const AdminDashboard = () => {
             >
               RTO Queue ({verifications.filter(v => v.status === 'Pending').length})
             </button>
+            <button
+              onClick={logoutAdmin}
+              className="px-4 py-2 text-xs font-bold rounded-xl bg-red-600 text-white hover:bg-red-700 transition"
+            >
+              Logout
+            </button>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 mb-8">
+          <div className="flex items-center justify-between gap-4 flex-wrap">
+            <div>
+              <p className="text-xs uppercase tracking-wider text-gray-500 font-bold">Disaster Recovery / Data Blackout</p>
+              <h3 className="text-lg font-bold text-gray-900 mt-1">Recovery Control</h3>
+            </div>
+            <div className="flex gap-2 flex-wrap">
+              <button
+                onClick={simulateDataBlackout}
+                className="px-4 py-2 rounded-xl bg-amber-500 text-white text-xs font-bold hover:bg-amber-600"
+              >
+                Wipe & Blackout
+              </button>
+              <button
+                onClick={restoreDataStore}
+                className="px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700"
+              >
+                Restore Backup
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+            <div className="bg-gray-50 rounded-xl border border-gray-200 p-3">
+              <p className="text-xs uppercase text-gray-500 font-bold mb-1">Recovery status</p>
+              <p className="font-bold text-gray-900">{recoveryStatus}</p>
+            </div>
+            <div className="bg-gray-50 rounded-xl border border-gray-200 p-3">
+              <p className="text-xs uppercase text-gray-500 font-bold mb-1">Data Store</p>
+              <p className="font-bold text-gray-900">{isDataBlackoutActive ? 'BLACKOUT' : 'NORMAL'}</p>
+            </div>
+            <div className="bg-gray-50 rounded-xl border border-gray-200 p-3">
+              <p className="text-xs uppercase text-gray-500 font-bold mb-1">Pending Sync</p>
+              <p className="font-bold text-gray-900">{pendingSyncItems.length}</p>
+            </div>
           </div>
         </div>
 
